@@ -250,7 +250,7 @@ session_start();
                                         </div>
                                         <div>
                                             <div class="small text-gray-500">December 7, 2019</div>
-                                            $290.29 has been deposited into your account!
+                                            $290.13 has been deposited into your account!
                                         </div>
                                     </a>
                                     <a class="dropdown-item d-flex align-items-center" href="#">
