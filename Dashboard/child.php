@@ -85,7 +85,7 @@ session_start();
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Manage children</h6>
                             <a class="collapse-item" href="child.php">All children</a>
-                            <a class="collapse-item" href="child.php">All children</a>
+                            <a class="collapse-item" href="child.php">Children details</a>
                         </div>
                     </div>
                 </li>
