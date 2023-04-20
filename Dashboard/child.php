@@ -83,7 +83,7 @@ session_start();
                     </a>
                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Manage children</h6>
+                            <h5 class="collapse-header">Manage children</h5>
                             <a class="collapse-item" href="child.php">All children</a>
                             <a class="collapse-item" href="child.php">Children details</a>
                         </div>
