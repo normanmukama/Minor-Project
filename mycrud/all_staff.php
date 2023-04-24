@@ -1,5 +1,5 @@
 <?php 
-require 'dbcon.php';
+require 'dbconnection.php';
 // session_start();
 
 ?>
@@ -32,11 +32,12 @@ require 'dbcon.php';
        <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <!-- <div class="card-header">
-                    <h3>CHILDREN DETAILS
-                        <a href="../mycrud/index2.php" class="btn btn-danger float-right">Add Child</a>
-                    </h3>
-                </div> -->
+                <div class="card-header">
+                    <h4 class="text-primary">STAFF ACCOUNTS
+                    <a href="../dashboard/main_dash.php" class="btn btn-danger float-right ">Home</a>
+                        
+                    </h4>
+                </div>
                 <div class="card-body">
                     <table id="dataTable" width="100%" cellspacing="0" class=" table table-striped table-bordered">
                         <thead>
@@ -44,14 +45,16 @@ require 'dbcon.php';
                                 <!-- <th>ID</th> -->
                                 <th>First name</th>
                                 <th>Last name</th>
-                                <th>Role</th>
                                 <th>Email</th>
-                                <th>Actions</th>
+                                <th>Role</th>
+                                <th>Contact</th>
+                                <!-- <th>Password</th>
+                                <th>Actions</th> -->
                             </tr>
                         </thead>
                         <tbody>
                             <?php   
-                              $query = "SELECT * FROM accounts";
+                              $query = "SELECT * FROM staff";
                               $query_run = mysqli_query($conn, $query);
 
                               if(mysqli_num_rows($query_run) > 0){
@@ -60,16 +63,11 @@ require 'dbcon.php';
                                     ?>
                                         <tr>
                                             <td><?= $child['first_name']; ?></td>
-                                            <td><?= $child['last_name']; ?></td>
-                                            <td><?= $child['address']; ?></td>
+                                            <td><?= $child['lastname']; ?></td>
                                             <td><?= $child['email']; ?></td>
-                                            <td  style="display:flex;flex-direction:row; gap:3px;">
-                                                <a href="../mycrud/student_view.php?id= <?= $child['id']; ?>" class="btn btn-info btn-sm"><i class="fa fa-eye mr-2"></i>View History</a>
-                                                <a href="../mycrud/student_edit.php?id= <?= $child['id']; ?>" class="btn btn-sm" style="background-color:orange;"><i class="fa fa-wrench mr-2"></i>Reset History</a>
-                                                <form action="delete_acc.php" method="POST" class="d-inline">
-                                                    <button type="submit" name="delete_account" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-trash-alt mr-2"></i>Remove Account</button>
-                                                </form>
-                                            </td>
+                                            <td><?= $child['role']; ?></td>
+                                            <td><?= $child['contact']; ?></td>
+                                            <!-- <td><?= $child['password']; ?></td> -->
                                         </tr>
                                     <?php
                                   }

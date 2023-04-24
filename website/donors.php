@@ -32,11 +32,11 @@ require 'dbcon.php';
        <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <!-- <div class="card-header">
-                    <h3>CHILDREN DETAILS
-                        <a href="../mycrud/index2.php" class="btn btn-danger float-right">Add Child</a>
-                    </h3>
-                </div> -->
+                <div class="card-header">
+                    <h4>DONORS' DETAILS
+                        <a href="../dashboard/main_dash.php" class="btn btn-danger float-right">Home</a>
+                    </h4>
+                </div>
                 <div class="card-body">
                     <table id="dataTable" width="100%" cellspacing="0" class=" table table-striped table-bordered">
                         <thead>
@@ -44,9 +44,9 @@ require 'dbcon.php';
                                 <!-- <th>ID</th> -->
                                 <th>First name</th>
                                 <th>Last name</th>
-                                <th>Role</th>
+                                <th>Address</th>
                                 <th>Email</th>
-                                <th>Actions</th>
+                               
                             </tr>
                         </thead>
                         <tbody>
@@ -63,13 +63,7 @@ require 'dbcon.php';
                                             <td><?= $child['last_name']; ?></td>
                                             <td><?= $child['address']; ?></td>
                                             <td><?= $child['email']; ?></td>
-                                            <td  style="display:flex;flex-direction:row; gap:3px;">
-                                                <a href="../mycrud/student_view.php?id= <?= $child['id']; ?>" class="btn btn-info btn-sm"><i class="fa fa-eye mr-2"></i>View History</a>
-                                                <a href="../mycrud/student_edit.php?id= <?= $child['id']; ?>" class="btn btn-sm" style="background-color:orange;"><i class="fa fa-wrench mr-2"></i>Reset History</a>
-                                                <form action="delete_acc.php" method="POST" class="d-inline">
-                                                    <button type="submit" name="delete_account" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-trash-alt mr-2"></i>Remove Account</button>
-                                                </form>
-                                            </td>
+                                           
                                         </tr>
                                     <?php
                                   }

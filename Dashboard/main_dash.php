@@ -347,8 +347,8 @@
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                                 aria-labelledby="dropdownMenuLink">
                                                 <div class="dropdown-header">Dropdown Manage Accounts:</div>
-                                                <a class="dropdown-item" href="../Website/reg_retrieve.php">Donor's account</a>
-                                                <a class="dropdown-item" href="../Website/reg_retrieve.php">Guardian's account</a>
+                                                <a class="dropdown-item" href="../Website/reg_retrieve.php">Donor accounts</a>
+                                                <a class="dropdown-item" href="../mycrud/staff3.php">Staff accounts</a>
                                                 <div class="dropdown-divider"></div>
                                                 <a class="dropdown-item" href="#">Admin account</a>
                                             </div>

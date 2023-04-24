@@ -37,7 +37,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Staff Departments:</h6>
-            <a class="collapse-item" href="#">All staff</a>
+            <a class="collapse-item" href="../mycrud/all_staff.php">All staff</a>
             <a class="collapse-item" href="#">Finance</a>
             <a class="collapse-item" href="../mycrud/code.php">Data Entry</a>
         </div>
@@ -70,7 +70,7 @@
         data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Support Department:</h6>
-            <a class="collapse-item" href="#">Donors</a>
+            <a class="collapse-item" href="../website/donors.php">Donors</a>
             <a class="collapse-item" href="#">Guardians</a>
         </div>
     </div>
