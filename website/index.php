@@ -52,6 +52,9 @@
         </nav>
     </div>  
     <!-- -------------------------------------header ends----------------------------------- -->
+    <!-- login modal starts -->
+ 
+    <!-- login modal ends -->
 
     <div class="container">
         <div class="row">
