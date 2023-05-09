@@ -39,7 +39,7 @@ session_start();
                     <div class="sidebar-brand-icon rotate-n-1 text-danger">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <div class="sidebar-brand-text mx-3 text-light">ADMIN</div>
+                    <div class="sidebar-brand-text mx-3 text-light">STAFF</div>
                 </a>
 
                 <!-- Divider -->
@@ -254,7 +254,7 @@ session_start();
                     <div class="container-fluid">
 
                         <!-- DataTales Example -->
-                        <?php include('../mycrud/code2.php');  ?>
+                        <?php include('../mycrud/code.php');  ?>
 
                     </div>
                     <!-- /.container-fluid -->

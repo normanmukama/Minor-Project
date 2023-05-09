@@ -20,17 +20,8 @@
                 <div class="card-body p-0 ">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-md-5 d-lg-block">
-                            <img class="img-fluid img-center m-3 rounded" src="../IMAGES/1.jpg" alt="">
-                            <div class="container">
-                                <p>
-                                    <a class="btn bg-primary mt-1 text-light" href="#">upload photo</a>
-                                </p>
-                                <!-- <label class="text-dark" for="description">Short description</label><br>
-                                <textarea name="" id="" cols="30" rows="2"></textarea> -->
-                            </div>
-                        </div>
-                        <div class="col-lg-7">
+                       
+                        <div class="col-sm-12">
                             <div class="p-4">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>

@@ -14,6 +14,7 @@ require 'dbconnection.php';
     <!-- <link rel="stylesheet" href="../mycrud/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <link href="../admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -34,7 +35,10 @@ require 'dbconnection.php';
             <div class="card">
                 <div class="card-header">
                     <h4 class="text-primary">STAFF ACCOUNTS
-                    <a href="staff.php" class="btn btn-danger float-right ml-3">Add Account</a>
+                    <!-- <a href="staff.php" class="btn btn-danger float-right ml-3">Add Account</a> -->
+                    <button type="button" class="btn btn-danger float-right ml-4" data-toggle="modal" data-target="#exampleModal">
+                      Add Staff
+                    </button>
                     <a href="../dashboard/main_dash.php" class="btn btn-primary float-right ">Home</a>
                         
                     </h4>
@@ -90,6 +94,68 @@ require 'dbconnection.php';
           </div>
        </div>
    </div> 
+
+   <!-- staff registration modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add child</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form class="user"   method="post" action="staff2.php">
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 mb-3 mb-sm-0">
+                                            <input type="text" name="ruser_firstname" class="form-control" id="exampleFirstName"
+                                                placeholder="First Name">
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="ruser_lastname" class="form-control" id="exampleLastName"
+                                                placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" name="ruser_email" class="form-control" id="exampleInputEmail"
+                                            placeholder="Email Address">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="role" name="role" class="form-control" id="exampleInputEmail"
+                                            placeholder="Role">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="contact" name="contact" class="form-control" id="exampleInputEmail"
+                                            placeholder="Contact">
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                            <input type="password" name="ruser_password" class="form-control "
+                                                id="exampleInputPassword" placeholder="Password">
+                                    </div>
+                                    
+                                    <div class="d-flex">
+                                        <button name="register" class="btn btn-primary  mr-4">
+                                            Register Account
+                                        </button>
+                                        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Close</button>
+                                    </div>
+                                    <hr>
+                                    <!-- <a href="index.html" class="btn btn-google  btn-block">
+                                        <i class="fab fa-google fa-fw"></i> Register with Google
+                                    </a> -->
+                                    <!-- <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
+                                    </a> -->
+                                </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
 <!-- <script src="../mycrud/assets/js/bootstrap.min.js"></script> -->
             <!-- Bootstrap core JavaScript-->

@@ -125,7 +125,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form role="form" method="post" action="user_login2.php">
+      <form role="form" method="post" action="user_login.php">
             <fieldset>
               <div class="form-group">
                 <input class="form-control" placeholder="Email" name="user_email" type="email" required>

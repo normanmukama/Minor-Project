@@ -21,7 +21,8 @@ $check_user="SELECT * from staff WHERE email='$user_email'";
     if(mysqli_num_rows($run_query) > 0)
     {
 echo "<script>alert('Customer already exists, Please try another one!')</script>";
- echo"<script>window.open('staff3.php')</script>";
+//  echo"<script>window.open('staff3.php')</script>";
+header("location: staff3.php");
 exit();
     }
 
