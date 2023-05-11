@@ -23,12 +23,12 @@
                             <h5>
                               <!-- <a href="../mycrud/code.php">log in</a> -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-                                 SIGN UP
+                                 STAFF LOGIN
                               </button>
                             </h5>
                             <p>
                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                   Launch demo modal
+                                   ADMIN LOGIN
                                </button>
                             </p>
                         </div>
@@ -161,41 +161,33 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      <form role="form" method="post" action="userlogin.php">
+      <form role="form" method="post" action="user_login.php">
             <fieldset>
               <div class="form-group">
-                <input class="form-control" placeholder="Email" name="user_email" type="email" required>
-							</div>
-
-              <div class="form-group">
-                <input class="form-control" placeholder="Email" name="user_email" type="email" required>
-							</div>
-
-              <div class="form-group">
-                <input class="form-control" placeholder="Email" name="user_email" type="email" required>
+                <input class="form-control" placeholder="Username" name="username" type="username" required>
 							</div>
 							
 							<div class="form-group">
-                <input class="form-control" placeholder="Password" name="user_password" type="password" required>
+                <input class="form-control" placeholder="Password" name="password" type="password" required>
 							</div>
 					  </fieldset>
 
             </div>
-              <div class="modal-footer">
-                <button class="btn btn-md btn-warning btn-block" name="user_login">Sign In</button>
+              <div class="modal-footer d-flex">
+                <button class="btn btn-md btn-warning btn-block" name="admin_login">Sign In</button>
 				    <button type="button" class="btn btn-md btn-success btn-block" data-dismiss="modal">Cancel</button>
 				  </form>
       </div>
-      <div class="modal-footer">
+      <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

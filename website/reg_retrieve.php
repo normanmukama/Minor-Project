@@ -32,11 +32,12 @@ require 'dbcon.php';
        <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <!-- <div class="card-header">
-                    <h3>CHILDREN DETAILS
-                        <a href="../mycrud/index2.php" class="btn btn-danger float-right">Add Child</a>
+                <div class="card-header">
+                    <h3>Support Team
+                        <a href="../mycrud/index2.php" class="btn btn-danger float-right">Add</a>
+                        <a href="../dashboard/main_dash.php" class="btn btn-primary float-right mr-4">Home</a>
                     </h3>
-                </div> -->
+                </div>
                 <div class="card-body">
                     <table id="dataTable" width="100%" cellspacing="0" class=" table table-striped table-bordered">
                         <thead>
