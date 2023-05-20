@@ -48,10 +48,10 @@
                                         <label for="date of birth">D.O.B</label>
                                         <input type="text" class="form-control" value = "<?= $child['date_of_birth']; ?>" name="date_of_birth" required>
                                     </div>
-                                    <div class="m-2">
+                                    <!-- <div class="m-2">
                                         <label for="country of origin">Country of origin</label>
                                         <input type="text" class="form-control" value = "<?= $child['original_country']; ?>" name="original_country" required>
-                                    </div>
+                                    </div> -->
                                     <div class="m-2">
                                         <label for="current country">Current country</label>
                                         <input type="text" class="form-control" value = "<?= $child['current_country']; ?>" name="current_country" required>

@@ -14,7 +14,7 @@ require 'dbcon.php';
     <!-- <link rel="stylesheet" href="../mycrud/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.css">
     <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.min.css"> -->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link href="../admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -34,10 +34,13 @@ require 'dbcon.php';
             <div class="card">
                 <div class="card-header">
                     <h3>Support Team
-                        <a href="../mycrud/index2.php" class="btn btn-danger float-right">Add</a>
+                    <button type="button" class="btn btn-danger float-right ml-4" data-toggle="modal" data-target="#exampleModal">
+                      Add User
+                    </button>
                         <a href="../dashboard/main_dash.php" class="btn btn-primary float-right mr-4">Home</a>
                     </h3>
                 </div>
+                <?php include "../mycrud/message.php"; ?>
                 <div class="card-body">
                     <table id="dataTable" width="100%" cellspacing="0" class=" table table-striped table-bordered">
                         <thead>
@@ -66,7 +69,7 @@ require 'dbcon.php';
                                             <td><?= $child['email']; ?></td>
                                             <td  style="display:flex;flex-direction:row; gap:3px;">
                                                 <a href="../mycrud/student_view.php?id= <?= $child['id']; ?>" class="btn btn-info btn-sm"><i class="fa fa-eye mr-2"></i>View History</a>
-                                                <a href="../mycrud/student_edit.php?id= <?= $child['id']; ?>" class="btn btn-sm" style="background-color:orange;"><i class="fa fa-wrench mr-2"></i>Reset History</a>
+                                                <a href="edit_account.php?id= <?= $child['id']; ?>" class="btn btn-sm" style="background-color:orange;"><i class="fa fa-wrench mr-2"></i>Update User</a>
                                                 <form action="delete_acc.php" method="POST" class="d-inline">
                                                     <button type="submit" name="delete_account" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-trash-alt mr-2"></i>Remove Account</button>
                                                 </form>
@@ -85,7 +88,62 @@ require 'dbcon.php';
           </div>
        </div>
    </div> 
+ 
 
+
+    <!-- support registration modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+                <div class="modal-body">
+                    <form class="user"   method="post" action="reg_to_db.php">
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="text" name="ruser_firstname" class="form-control" id="exampleFirstName"
+                                    placeholder="First Name">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" name="ruser_lastname" class="form-control" id="exampleLastName"
+                                    placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="ruser_email" class="form-control" id="exampleInputEmail"
+                                placeholder="Email Address">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <input type="password" name="ruser_password" class="form-control "
+                                    id="exampleInputPassword" placeholder="Password">
+                            </div>
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <select id="my-select" name="ruser_address" class="form-control" name="">
+                                            <option>Donor</option>
+                                            <option>Guardian</option>
+                                        </select>
+                                    </div>
+                            </div>
+                        </div>
+                        <button name="register" class="btn btn-primary  btn-block">
+                            Register
+                        </button>
+                        <hr>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 <!-- <script src="../mycrud/assets/js/bootstrap.min.js"></script> -->
             <!-- Bootstrap core JavaScript-->
             <script src="../admin/vendor/jquery/jquery.min.js"></script>

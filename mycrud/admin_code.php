@@ -31,8 +31,8 @@ require 'dbconnection.php';
        <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h3>CHILD DETAILS
+                <div class="card-header text-primary">
+                    <h3>CHILD INFORMATION
                         <a href="../dashboard/main_dash.php" class="btn btn-danger float-right">Back</a>
                     </h3>
                 </div>
@@ -43,12 +43,12 @@ require 'dbconnection.php';
                                 <!-- <th>ID</th> -->
                                 <th>First name</th>
                                 <th>Last name</th>
-                                <th>D.O.B</th>
+                                <!-- <th>D.O.B</th> -->
                                 <!-- <th>Former country</th> -->
-                                <th>Current country</th>
+                                <th>Country</th>
                                 <th>District</th>
-                                <th>Guardian_name</th>
-                                <th>Actions</th>
+                                <!-- <th>Guardian_name</th> -->
+                                <!-- <th>Actions</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -64,14 +64,14 @@ require 'dbconnection.php';
                                             <!-- <td><?= $child['id']; ?></td> -->
                                             <td><?= $child['first_name']; ?></td>
                                             <td><?= $child['last_name']; ?></td>
-                                            <td><?= $child['date_of_birth']; ?></td>
+                                            <!-- <td><?= $child['date_of_birth']; ?></td> -->
                                             <!-- <td><?= $child['original_country']; ?></td> -->
                                             <td><?= $child['current_country']; ?></td>
                                             <td><?= $child['current_district']; ?></td>
-                                            <td><?= $child['guardian']; ?></td>
-                                            <td  style="display:flex;flex-direction:row; gap:3px;">
+                                            <!-- <td><?= $child['guardian']; ?></td> -->
+                                            <!-- <td  style="display:flex;flex-direction:row; gap:3px;">
                                                 <a href="../mycrud/student_view.php?id= <?= $child['id']; ?>" class="btn btn-primary btn-sm">View</a>
-                                            </td>
+                                            </td> -->
                                         </tr>
                                     <?php
                                   }

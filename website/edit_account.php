@@ -1,35 +1,6 @@
-<?php
+<?php 
 session_start();
-
-?>
-<?php
-include("dbcon.php");
-if(isset($_POST['register']))
-{
-
-$user_firstname = $_POST['ruser_firstname'];
-$user_lastname = $_POST['ruser_lastname'];
-$user_address = $_POST['ruser_address'];
-$user_email = $_POST['ruser_email'];
-$user_password = $_POST['ruser_password'];
-
-
-$check_user="SELECT * from accounts WHERE email='$user_email'";
-    $run_query = mysqli_query($conn, $check_user);
-
-    if(mysqli_num_rows($run_query) > 0)
-    {
-echo "<script>alert('Customer already exists, Please try another one!')</script>";
- echo"<script>window.open('registration1.php')</script>";
-exit();
-    }
-
-    $saveaccount="INSERT INTO accounts (first_name, last_name, address, email, password) VALUES ('$user_firstname','$user_lastname','$user_address','$user_email','$user_password')";
-    mysqli_query($conn,$saveaccount);
-    echo "<script>alert('Data successfully saved, You may now login!')</script>";				
-    echo "<script>window.open('registration1.php')</script>";
-    // header('Location: registration1.php');
-
+include 'dbcon.php';
 If(isset($_GET['id'])){
     $child_id = mysqli_real_escape_string($conn, $_GET['id']);
     $query = "SELECT * from accounts WHERE id = '$child_id'";
@@ -56,7 +27,7 @@ If(isset($_GET['id'])){
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                        <input type="password" name="ruser_password" class="form-control "
+                        <input type="text" name="ruser_password" class="form-control "
                         value="<?=$child['password'] ?>" placeholder="Password">
                     </div>
                     <div class="col-sm-6">
@@ -77,5 +48,5 @@ If(isset($_GET['id'])){
     }
     
 }
-}
+
 ?>
