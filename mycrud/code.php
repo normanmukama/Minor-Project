@@ -19,7 +19,6 @@ require 'dbconnection.php';
 </head>
 <body>
    <div class=" mt-4">
-       <?php require 'message.php' ?>
        <div class="row">
           <div class="col-md-12">
             <div class="card">

@@ -12,8 +12,8 @@
 </footer>
 
 <script src="./jquery/jquery-3.6.1.min.js"></script>
-<script src="./jquery/jquery.validate.min.js"></script>
-<script src="./assets/datatables.min.js"></script>
+<script src="jquery.validate.min.js"></script>
+<script src=".datatables.min.js"></script>
 <script src="./assets/pdfmake.min.js"></script>
 <script src="./assets/vfs_fonts.js"></script>
 <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -25,7 +25,7 @@
     
     <script>
         $(document).ready(function(){
-            var data = $('#example').DataTable(
+            var data = $('#dataTable').DataTable(
         {
             responsive: "true",
             buttons: [

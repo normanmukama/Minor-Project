@@ -387,6 +387,7 @@
                                         </div>
                                     </div> -->
                                     <!-- Card Body -->
+
                                     <div class="card-body" style="height:51vh;">
                                         <div class="chart-pie pt-4 pb-2">
                                             <canvas id="myPieChart"></canvas>
@@ -394,6 +395,7 @@
                                         <div class="mt-4 text-center small">
                                             <span class="mr-2">
                                                 <i class="fas fa-circle text-primary"></i>Orphans
+                                                <!-- N:\php installation\htdocs\minor-project\admin\js\demo\chart-pie-demo.js -->
                                             </span>
                                             <span class="mr-2">
                                                 <i class="fas fa-circle text-success"></i>Donors
@@ -407,6 +409,7 @@
                             </div>
                         </div>
                 </div>
+                
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
