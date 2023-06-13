@@ -27,7 +27,11 @@ require 'dbcon.php';
     <link href="../admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
-   <div class=" mt-4">
+<?php
+        include '../assets2/includes/header.php';
+        include '../assets2/includes/sidenavbar.php';
+    ?>
+   <div class="">
        
        <div class="row">
           <div class="col-md-12">

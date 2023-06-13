@@ -26,6 +26,7 @@ require 'dbconnection.php';
 
 </head>
 <body>
+
    <div class=" mt-4">
        <?php require 'message.php' ?>
        <div class="row">

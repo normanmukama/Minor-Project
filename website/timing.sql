@@ -1,0 +1,6 @@
+CREATE TABLE `Time-manager` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `Time-in` TIME NOT NULL,
+  `Date` DATE NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

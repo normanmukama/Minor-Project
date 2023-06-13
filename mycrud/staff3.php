@@ -28,7 +28,12 @@ require 'dbconnection.php';
     <link href="../admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body>
-   <div class=" mt-4">
+
+    <?php
+        include '../assets2/includes/header.php';
+        include '../assets2/includes/sidenavbar.php';
+    ?>
+   <div class="" style="width:auto;">
        <div class="row">
           <div class="col-md-12">
             <div class="card">
@@ -74,9 +79,9 @@ require 'dbconnection.php';
                                             <td><?= $child['password']; ?></td>
                                             <td  style="display:flex;flex-direction:row; gap:3px;">
                                                 <!-- <a href="student_view.php?id= <?= $child['id']; ?>" class="btn btn-info btn-sm"><i class="fa fa-eye mr-2"></i>View</a> -->
-                                                <a href="staff_update.php?id= <?= $child['id']; ?>"  class="btn btn-sm btn-primary"><i class="fa fa-wrench mr-2"></i>Update Account</a>
+                                                <a href="staff_update.php?id= <?= $child['id']; ?>"  class="btn btn-sm btn-primary"><i class="fa fa-wrench mr-2"></i>Update</a>
                                                 <form action="staff_del.php" method="POST" class="d-inline">
-                                                    <button type="submit" name="delete_account" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-trash-alt mr-2"></i>Remove Account</button>
+                                                    <button type="submit" name="delete_account" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-trash-alt mr-2"></i>Remove</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -5,6 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Main-dash</title>
+     <!--bootstrap v5.2  -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+   
 
         <link rel="stylesheet" href="../style-css/sidenav.css">
         <!-- Custom fonts for this template -->
@@ -209,11 +213,16 @@
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
+                
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
+                                
+                                    
+                                    
+                                    <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                      <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>        
+                                      settings
+                                    </a>
+                                
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
@@ -389,20 +398,66 @@
                                     <!-- Card Body -->
 
                                     <div class="card-body" style="height:51vh;">
-                                        <div class="chart-pie pt-4 pb-2">
+                                        <!-- <div class="chart-pie pt-4 pb-2">
                                             <canvas id="myPieChart"></canvas>
-                                        </div>
+                                        </div> -->
+                                            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                              Link with href
+                                            </a>
+                                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                            Button with data-bs-target
+                                            </button>
+
+                                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                                            <div class="offcanvas-header">
+                                                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Profile Settings</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                            </div>
+                                            <div class="offcanvas-body">
+                                                <div>
+                                                Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                                                </div>
+                                                <!-- <div class="dropdown mt-3">
+                                                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Dropdown button
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                </ul>
+                                                </div> -->
+                                                  <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>        
+                                                   settings
+                                                 </a>
+                                            </div>
+                                            </div>
                                         <div class="mt-4 text-center small">
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-primary"></i>Orphans
-                                                <!-- N:\php installation\htdocs\minor-project\admin\js\demo\chart-pie-demo.js -->
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-success"></i>Donors
-                                            </span>
-                                            <span class="mr-2">
-                                                <i class="fas fa-circle text-info"></i>Guardians
-                                            </span>
+                                            
+                                            <div class="progress my-2">
+                                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                                            </div>
+                                            <div class="progress my-2">
+                                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                                            </div>
+                                            <div class="progress my-2">
+                                               <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <span class="mr-2">
+                                                    <i class="fas fa-circle text-primary"></i>Orphans
+                                                    <!-- N:\php installation\htdocs\minor-project\admin\js\demo\chart-pie-demo.js -->
+                                                </span>
+                                                <span class="mr-2">
+                                                    <i class="fas fa-circle text-success"></i>Donors
+                                                </span>
+                                                <span class="mr-2">
+                                                    <i class="fas fa-circle text-info"></i>Guardians
+                                                </span>
+                                            </div>
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -415,6 +470,10 @@
             <!-- End of Main Content -->
         </div>
         <!-- End of Content Wrapper -->
+
+
+
+        
 
         <script src="../js/bootstrap.min.js"></script>
         <?php include '../assets2/includes/scripts.php'; ?>

@@ -22,7 +22,8 @@ if(isset($_POST['user_login']))
     if(mysqli_num_rows($run))
     {
         echo "<script>alert('You\'re successfully login!')</script>";
-        header("location: ../Dashboard\child.php");
+        // header("location: ../Dashboard\child.php");
+        header("location:timing.php");
     }
     else
     {
