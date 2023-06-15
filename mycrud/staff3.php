@@ -1,7 +1,7 @@
 <?php 
 require 'dbconnection.php';
 // session_start();
-
+include 'd-table.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,18 +11,14 @@ require 'dbconnection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Managing Accounts</title>
-    <!-- <link rel="stylesheet" href="../mycrud/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="../mycrud/assets/fontawesome/css/all.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
     <link href="../admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
+    
 
     <!-- Custom styles for this page -->
     <link href="../admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -32,6 +28,8 @@ require 'dbconnection.php';
     <?php
         include '../assets2/includes/header.php';
         include '../assets2/includes/sidenavbar.php';
+        // include '../pdf/footer.php';
+        // include 'd-table.php';
     ?>
    <div class="" style="width:auto;">
        <div class="row">
@@ -145,12 +143,7 @@ require 'dbconnection.php';
                                         <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Close</button>
                                     </div>
                                     <hr>
-                                    <!-- <a href="index.html" class="btn btn-google  btn-block">
-                                        <i class="fab fa-google fa-fw"></i> Register with Google
-                                    </a> -->
-                                    <!-- <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                    </a> -->
+
                                 </form>
       </div>
     </div>
@@ -178,5 +171,6 @@ require 'dbconnection.php';
 
     <!-- Page level custom scripts -->
     <script src="../admin/js/demo/datatables-demo.js"></script>
+    
 </body>
 </html>

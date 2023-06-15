@@ -6,23 +6,21 @@
     <!--Html for the footer-->
 <footer class="footer">
     <!-- <div class="hr"></div> -->
-    <div class="last">
-        <p>&copy;copyright all rights reserved by Ssewankambo Derick</p>
-    </div>
+
 </footer>
 
-<script src="./jquery/jquery-3.6.1.min.js"></script>
+<script src="assets3/jquery/jquery-3.6.1.min.js"></script>
 <script src="jquery.validate.min.js"></script>
-<script src=".datatables.min.js"></script>
-<script src="./assets/pdfmake.min.js"></script>
-<script src="./assets/vfs_fonts.js"></script>
-<script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="./assets/dataTables.responsive.min.js"></script>
-<script src="./assets/sweetalert.min.js"></script>
-    <script src="./assets/java.js"></script>
-    <script src="./assets/index.js"></script>
+<script src="assets3/datatables.min.js"></script>
+<script src="assets3/pdfmake.min.js"></script>
+<script src="assets3/vfs_fonts.js"></script>
+<script src="assets3/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets3/dataTables.responsive.min.js"></script>
+<script src="assets3/sweetalert.min.js"></script>
+    <script src="asset3s/java.js"></script>
+    <script src="assets3/index.js"></script>
 
-    
+ 
     <script>
         $(document).ready(function(){
             var data = $('#dataTable').DataTable(

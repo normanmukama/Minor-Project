@@ -366,9 +366,42 @@
                                     <!-- Card Body -->
                                     <!-- try to add some  information about orphans -->
                                     <div class="more-content text-primary text-center" style="height:51vh;">
-                                    <h4>Soka ompe ku ideas mwana, what should i add on?
-                                    <i style="color:brown; font-size:30px; " class="fas fa-smile ml-4"></i>
-                                    </h4>
+                                   
+                                       
+                                    <!-- Time manager -->
+                                    <div class="">
+                                        <h2>Time Records</h2>
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Date/Time In</th>
+                                                    <th>Date/Time Out</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                $conn = mysqli_connect("localhost","root","adminnorman","minor_project");
+                                                $sql = "SELECT * FROM timerecords";
+                                                $record = mysqli_query($conn, $sql);
+                                                // Assuming you have retrieved the records from the database and stored them in $records variable
+                                                if(mysqli_num_rows($record) > 0)
+                                                {
+                                                    foreach ($record as $record) {
+                                                        echo "<tr>";
+                                                        echo "<td>" . $record['id'] . "</td>";
+                                                        echo "<td>" . $record['datetime_in'] . "</td>";
+                                                        echo "<td>" . $record['datetime_out'] . "</td>";
+                                                        echo "<td>" . $record['status'] . "</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -404,9 +437,9 @@
                                             <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                                               Link with href
                                             </a>
-                                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                                            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                                             Button with data-bs-target
-                                            </button>
+                                            </button> -->
 
                                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                                             <div class="offcanvas-header">

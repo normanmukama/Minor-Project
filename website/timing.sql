@@ -1,6 +1,10 @@
-CREATE TABLE `Time-manager` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `Time-in` TIME NOT NULL,
-  `Date` DATE NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE TimeRecorder (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    staff_id INT,
+    datetime_in DATETIME,
+    datetime_out DATETIME,
+    timeworked TIME,
+    status VARCHAR(20),
+    FOREIGN KEY (staff_id) REFERENCES staff(id)
+);
+
