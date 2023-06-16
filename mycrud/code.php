@@ -158,7 +158,7 @@ new $.fn.dataTable.Buttons(table, {
         {
             extend: 'excel',
             text: 'Excel',
-            // class: 'btn btn-success',
+            class: 'btn btn-success',
             exportOptions: {
                 columns: [0, 1, 2, 3, 4, 5]
             }
