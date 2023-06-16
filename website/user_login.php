@@ -2,6 +2,7 @@
 session_start();
 
 ?>
+
 <?php
 
 $conn = mysqli_connect("127.0.0.1","root","adminnorman","minor_project");
@@ -22,8 +23,10 @@ if(isset($_POST['user_login']))
     if(mysqli_num_rows($run))
     {
         echo "<script>alert('You\'re successfully login!')</script>";
-        // header("location: ../Dashboard\child.php");
-        header("location:timing.php");
+        header("location: ../Dashboard\child.php");
+        // header("location:timing.php");
+        $_SESSION['email']=$user_email;
+    
     }
     else
     {
@@ -31,6 +34,7 @@ if(isset($_POST['user_login']))
         exit();	
     }
     
+
 }
 
 //retrieving admin credentials

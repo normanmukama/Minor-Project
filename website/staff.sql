@@ -43,7 +43,6 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`id`, `first_name`, `lastname`, `email`, `role`, `contact`, `password`, `reg_date`) VALUES
-(2, 'Nahabwe', 'Henry', 'nahabwehenry@gmail.com', 'Director', 2147483647, '747rgeyru', '2023-04-23'),
 (5, 'George', 'Garrison', 'pywypitafu@mailinator.com', 'hoju@mailinator.com', 0, 'Pa$$w0rd!', '2023-04-23'),
 (8, 'Ankunda', 'Hope', 'ankundahope@gmail.com', 'Stakeholder', 2147483647, 'hope', '2023-05-08'),
 (9, 'Byamugisha', 'Simon', 'byamugisha@gmail.com', 'resident director', 2147483647, 'simon', '2023-05-08'),

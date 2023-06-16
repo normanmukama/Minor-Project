@@ -1,7 +1,6 @@
 <?php 
 require 'dbconnection.php';
 // session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -11,34 +10,37 @@ require 'dbconnection.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data insertion</title>
-    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css"> -->
+    <title>Child Records</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 </head>
 <body>
    <div class=" mt-4">
        <div class="row">
           <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    <h3>CHILD DETAILS
-                        <button type="button" class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModal">
-                           Add Child
+                <div class="card-header d-flex justify-content-between">
+                    <div class="d-flex">
+                        <div id="printButton"></div>
+                        <div id="excelButton"></div>
+                        <div id="pdfButton"></div>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            Add Child
                         </button>
-                    </h3>
-
+                    </div>
                 </div>
+
+                <?php include 'd-table.php'; ?>
                 <div class="card-body">
-                    <table id="dataTable" width="100%" cellspacing="0" class=" table table-striped table-bordered">
+                    <table id="dataTable" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <!-- <th>ID</th> -->
                                 <th>First name</th>
                                 <th>Last name</th>
                                 <th>D.O.B</th>
-                                <!-- <th>Former country</th> -->
                                 <th>Current country</th>
                                 <th>District</th>
                                 <th>Guardian_name</th>
@@ -52,23 +54,17 @@ require 'dbconnection.php';
 
                               if(mysqli_num_rows($query_run) > 0){
                                   foreach($query_run as $child){
-                                    //   echo $student['name'];
                                     ?>
                                         <tr>
-                                            <!-- <td><?= $child['id']; ?></td> -->
                                             <td><?= $child['first_name']; ?></td>
                                             <td><?= $child['last_name']; ?></td>
                                             <td><?= $child['date_of_birth']; ?></td>
                                             <td><?= $child['current_country']; ?></td>
                                             <td><?= $child['current_district']; ?></td>
                                             <td><?= $child['guardian']; ?></td>
-                                            <td  style="display:flex;flex-direction:row; gap:3px;">
-                                                <a href="../mycrud/student_view.php?id= <?= $child['id']; ?> " class="btn btn-primary float-right btn-sm">View
-                                                    <!-- <button type="button" class="btn btn-primary float-right btn-sm" data-toggle="modal" data-target="#exampleModal-1">
-                                                        View
-                                                    </button> -->
-                                                </a>
-                                                <a href="../mycrud/student_edit.php?id= <?= $child['id']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                            <td style="display:flex;flex-direction:row; gap:3px;">
+                                                <a href="../mycrud/student_view.php?id=<?= $child['id']; ?>" class="btn btn-primary float-right btn-sm">View</a>
+                                                <a href="../mycrud/student_edit.php?id=<?= $child['id']; ?>" class="btn btn-success btn-sm">Edit</a>
                                                 <form action="../mycrud/getdata.php" method="POST" class="d-inline">
                                                     <button type="submit" name="delete_child" value="<?= $child['id']; ?>" class="btn btn-danger"><i class="fa fa-use"></i>Delete</button>
                                                 </form>
@@ -83,143 +79,108 @@ require 'dbconnection.php';
                         </tbody>
                     </table>
                 </div>
+.
+</div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Child Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Child</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-          </div>
-       </div>
-   </div> 
-
-
-<!-- ---Add child details modal -->
-   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add child</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form action="../mycrud/getdata.php" method="post">
-                      <div class="m-2">
-                          <label for="fname">First Name</label>
-                          <input type="text" class="form-control" name="fname" required>
-                      </div>
-                      <div class="m-2">
-                          <label for="lname">Last Name</label>
-                          <input type="text" class="form-control" name="lname" required>
-                      </div>
-                      <div class="m-2">
-                          <label for="date_of_bith">Date of Bith</label>
-                          <!-- changed from course to original contry -->
-                          <input type="text" class="form-control" name="date_of_birth" required>
-                      </div>
-                      
-                      <div class="m-2">
-                          <label for="country"> Country</label>
-                          <!-- changed from course to original contry -->
-                          <input type="text" class="form-control" name="current_country" required>
-                      </div>
-                      <div class="m-2">
-                          <label for="district">Current District</label>
-                          <!-- changed from course to original contry -->
-                          <input type="text" class="form-control" name="district" required>
-                      </div>
-                      <div class="m-2">
-                          <label for="guardian">Guardian name</label>
-                          <input type="text" class="form-control" name="guardian" required>
-                      </div>
-
-                      <input type="submit" name="add_child" class="btn btn-primary">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </form>
-      </div>
+            <div class="modal-body">
+                <!-- Child form goes here -->
+                <form action="../mycrud/getdata.php" method="POST">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_of_birth">Date of Birth</label>
+                        <input type="date" class="form-control" id="date_of_birth" name="date_of_birth" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="current_country">Current Country</label>
+                        <input type="text" class="form-control" id="current_country" name="current_country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="current_district">Current District</label>
+                        <input type="text" class="form-control" id="current_district" name="current_district" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guardian_name">Guardian Name</label>
+                        <input type="text" class="form-control" id="guardian_name" name="guardian_name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="add_child">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+<script>
+   
+    var table = $('#dataTable').DataTable();
 
-<!-- ---view child details modal -->
-<!-- its not yet over -->
-<div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">View child details</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h2>Are you sure there is nothing??</h2>
-      <?php 
-                    require 'dbconnection.php';
-                    if(isset($_GET['id'])){
-                        $child_id = mysqli_real_escape_string($conn, $_GET['id']);
-                        $query = "SELECT * FROM orphans WHERE id = '$child_id'";
-                        $query_run = mysqli_query($conn, $query);
+// Print button
+new $.fn.dataTable.Buttons(table, {
+    buttons: [
+        {
+            extend: 'print',
+            text: 'Print',
+            className: 'btn btn-primary',
+            exportOptions: {
+                columns: [0, 1, 2, 3, 4, 5]
+            }
+        }
+    ]
+}).container().appendTo($('#printButton'));
 
-                        if(mysqli_num_rows($query_run) > 0){
-                            $child = mysqli_fetch_array($query_run);
+// Excel button
+new $.fn.dataTable.Buttons(table, {
+    buttons: [
+        {
+            extend: 'excel',
+            text: 'Excel',
+            // class: 'btn btn-success',
+            exportOptions: {
+                columns: [0, 1, 2, 3, 4, 5]
+            }
+        }
+    ]
+}).container().appendTo($('#excelButton'));
 
-                            ?>
-                                <div class="m-2">
-                                    <label for="Name">First Name</label>
-                                    <p class="form-control">
-                                        <?= $child['first_name']; ?>
-                                    </p>
-                                </div>
-                                <div class="m-2">
-                                    <label for="course">Last Name</label>
-                                    <p class="form-control">
-                                        <?= $child['last_name']; ?>
-                                    </p>
-                                </div>
-                                <div class="m-2">
-                                    <label for="email">D.O.B</label>
-                                    <p class="form-control">
-                                        <?= $child['date_of_birth']; ?>
-                                    </p>
-                                </div>
-                               
-                                <div class="m-2">
-                                    <label for="email">Current country</label>
-                                    <p class="form-control">
-                                        <?= $child['current_country']; ?>
-                                    </p>
-                                </div>
-                                <div class="m-2">
-                                    <label for="email">District</label>
-                                    <p class="form-control">
-                                        <?= $child['current_district']; ?>
-                                    </p>
-                                </div>
-                                <div class="m-2">
-                                    <label for="email">Guardian</label>
-                                    <p class="form-control">
-                                        <?= $child['guardian']; ?>
-                                    </p>
-                                </div>
-                            <?php
-                        }else{
-                            echo "<h4>No data found</h4>";
-                        }
-                    }
-                ?> 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+// PDF button
+new $.fn.dataTable.Buttons(table, {
+    buttons: [
+        {
+            extend: 'pdf',
+            text: 'PDF',
+            className: 'btn btn-danger',
+            exportOptions: {
+                columns: [0, 1, 2, 3, 4, 5]
+            }
+        }
+    ]
+}).container().appendTo($('#pdfButton'));
 
+</script>
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-<!-- <script src="assets/js/bootstrap.min.js"></script> -->
 </body>
 </html>

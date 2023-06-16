@@ -139,7 +139,7 @@
             </div>
               <div class="modal-footer">
                 <button class="btn btn-md btn-warning btn-block" name="user_login">Sign In</button>
-				    <button type="button" class="btn btn-md btn-success btn-block" data-dismiss="modal">Cancel</button>
+				    <!-- <button type="button" class="btn btn-md btn-success btn-block" data-dismiss="modal">Cancel</button> -->
 				  </form>
       </div>
       <div class="modal-footer">

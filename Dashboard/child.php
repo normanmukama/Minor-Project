@@ -1,7 +1,39 @@
 <?php 
 // require 'dbconnection.php';
 session_start();
+// if(!$_SESSION['user_email'])
+// {
+//     header("Location: ../website/entry_page.php");
+// }
 ?>
+              
+<?php
+include 'config.php';
+
+if (isset($_SESSION['email'])) {
+    $user_email = $_SESSION['email'];
+    
+    $stmt_edit = $conn->prepare('SELECT * FROM staff WHERE email = :email');
+    $stmt_edit->execute(array(':email' => $user_email));
+    $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+
+    if ($edit_row) {
+        extract($edit_row);
+        // Rest of your code here
+    } else {
+        // Handle the case when no rows are returned
+        echo "No rows found.";
+    }
+
+    // var_dump($user_mail);
+} else {
+    echo "Email not found in session.";
+}
+?>
+
+
+ 
+                
 
 <!DOCTYPE html>
     <html lang="en">
@@ -23,7 +55,9 @@ session_start();
 
     <!-- Custom styles for this page -->
     <link href="../admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+      
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </head>
 
     <body id="page-top">
@@ -148,7 +182,7 @@ session_start();
 
                 <!-- Main Content -->
                 <div id="content">
-
+       
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -200,53 +234,28 @@ session_start();
                                 </div>
                             </li>
 
-                            <!-- Nav Item - Alerts -->
-                            <li class="nav-item dropdown no-arrow mx-1">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Notifications</span>
-                                
-                                </a>
-                                
-                            </li>
+                            <ul class="nav navbar-nav navbar-right navbar-user">
+                                <li class="dropdown messages-dropdown">
+                                    <a href="#"><i class="fa fa-calendar"></i>  <?php
+                                        $Today=date('y:m:d');
+                                        $new=date('l, F d, Y',strtotime($Today));
+                                        echo $new; ?></a>  
+                                </li>
 
-                            <!-- Nav Item - Messages -->
-                            
+                                <div class="topbar-divider d-none d-sm-block"></div>
 
-                            <div class="topbar-divider d-none d-sm-block"></div>
-
-                            <!-- Nav Item - User Information -->
-                            <li class="nav-item dropdown no-arrow">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dev Norman</span>
-                                
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                    aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
+                                <div class="dropdown">
+                                    <button class=" dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $user_email; ?><b class="caret"></b></a>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Time Out</a></li>
+                                    </ul>
                                 </div>
-                            </li>
-
+                            </ul>
                         </ul>
-
                     </nav>
                     <!-- End of Topbar -->
 
@@ -316,11 +325,11 @@ session_start();
     <script src="../admin/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../admin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- <script src="../admin/vendor/datatables/jquery.dataTables.min.js"></script> -->
+    <!-- <script src="../admin/vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
 
     <!-- Page level custom scripts -->
-    <script src="../admin/js/demo/datatables-demo.js"></script>
+    <!-- <script src="../admin/js/demo/datatables-demo.js"></script> -->
 
     </body>
 </html>
