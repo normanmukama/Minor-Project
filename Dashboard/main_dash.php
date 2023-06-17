@@ -1,3 +1,34 @@
+
+
+<?php
+session_start();
+include 'config.php';
+
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    
+    $stmt_edit = $conn->prepare('SELECT * FROM admin WHERE username = :username');
+    $stmt_edit->execute(array(':username' => $username));
+    $edit_row = $stmt_edit->fetch(PDO::FETCH_ASSOC);
+   
+    if ($edit_row) {
+        extract($edit_row);
+        // Rest of your code here
+    } else {
+        // Handle the case when no rows are returned
+        echo "No rows found.";
+    }
+
+    // var_dump($user_mail);
+} else {
+    echo "username not found in session.";
+}
+
+// var_dump($username);
+?>
+
+
+
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -52,9 +83,20 @@
                             </div>
                         </div>
                     </form>
+                          
 
+                    <ul class="nav navbar-nav navbar-right navbar-user">
+                                <li class="dropdown messages-dropdown">
+                                    <a href="#"><i class="fa fa-calendar"></i>  <?php
+                                        $Today=date('y:m:d');
+                                        $new=date('l, F d, Y',strtotime($Today));
+                                        echo $new; ?></a>  
+                                </li>
+
+                            </ul>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
@@ -203,9 +245,10 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Dev Norman</span>
+                               
                                 <img class="img-profile rounded-circle"
                                     src="../IMAGES/1.jpg">
+                                    <span class="ml-2 d-none d-lg-inline text-gray-600"><span class="mr-2 d-none d-lg-inline text-gray-600 small"></i> <?php echo $username; ?></span></span>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -216,8 +259,6 @@
                 
                                 </a>
                                 
-                                    
-                                    
                                     <a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                                       <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>        
                                       settings
@@ -236,7 +277,6 @@
                         </li>
 
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 

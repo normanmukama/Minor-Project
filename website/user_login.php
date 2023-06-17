@@ -56,6 +56,8 @@ if(isset($_POST['admin_login']))
     {
         echo "<script>alert('You\'re successfully login!')</script>";
         header("location: ../Dashboard\main_dash.php");
+
+        $_SESSION['username'] = $username;
     }
     else
     {

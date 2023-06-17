@@ -25,6 +25,7 @@ require 'dbconnection.php';
                         <div id="printButton"></div>
                         <div id="excelButton"></div>
                         <div id="pdfButton"></div>
+                        <div id="example_wrappers"></div>
                     </div>
                     <div>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
@@ -100,11 +101,11 @@ require 'dbconnection.php';
                 <form action="../mycrud/getdata.php" method="POST">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        <input type="text" class="form-control" id="first_name" name="fname" required>
                     </div>
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        <input type="text" class="form-control" id="last_name" name="lname" required>
                     </div>
                     <div class="form-group">
                         <label for="date_of_birth">Date of Birth</label>
@@ -116,11 +117,11 @@ require 'dbconnection.php';
                     </div>
                     <div class="form-group">
                         <label for="current_district">Current District</label>
-                        <input type="text" class="form-control" id="current_district" name="current_district" required>
+                        <input type="text" class="form-control" id="current_district" name="district" required>
                     </div>
                     <div class="form-group">
                         <label for="guardian_name">Guardian Name</label>
-                        <input type="text" class="form-control" id="guardian_name" name="guardian_name" required>
+                        <input type="text" class="form-control" id="guardian_name" name="guardian" required>
                     </div>
                     <button type="submit" class="btn btn-primary" name="add_child">Submit</button>
                 </form>
@@ -144,7 +145,7 @@ new $.fn.dataTable.Buttons(table, {
         {
             extend: 'print',
             text: 'Print',
-            className: 'btn btn-primary',
+            className: 'btn bg-primary',
             exportOptions: {
                 columns: [0, 1, 2, 3, 4, 5]
             }
@@ -158,7 +159,7 @@ new $.fn.dataTable.Buttons(table, {
         {
             extend: 'excel',
             text: 'Excel',
-            class: 'btn btn-success',
+            className: 'btn bg-success',
             exportOptions: {
                 columns: [0, 1, 2, 3, 4, 5]
             }
@@ -172,7 +173,7 @@ new $.fn.dataTable.Buttons(table, {
         {
             extend: 'pdf',
             text: 'PDF',
-            className: 'btn btn-danger',
+            className: 'btn bg-danger',
             exportOptions: {
                 columns: [0, 1, 2, 3, 4, 5]
             }
