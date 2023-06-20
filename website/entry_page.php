@@ -56,14 +56,14 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h5>
                               <!-- <a href="../mycrud/code.php">log in</a> -->
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                              <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
                                  STAFF LOGIN
-                              </button>
+                              </button> -->
                             </h5>
                             <p>
-                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                               <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                    ADMIN LOGIN
-                               </button>
+                               </button> -->
                             </p>
                         </div>
                     </div>
@@ -140,99 +140,6 @@
         </div>
     </div>
 
-
-
-  
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
-  Launch static backdrop modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form role="form" method="post" action="user_login.php">
-            <fieldset>
-              <div class="form-group">
-                <input class="form-control" placeholder="Email" name="user_email" type="email" required>
-							</div>
-							
-							<div class="form-group">
-                <input class="form-control" placeholder="Password" name="user_password" type="password" required>
-							</div>
-					  </fieldset>
-
-            </div>
-              <div class="modal-footer">
-                <button class="btn btn-md btn-warning btn-block" name="user_login">Sign In</button>
-				    <!-- <button type="button" class="btn btn-md btn-success btn-block" data-dismiss="modal">Cancel</button> -->
-				  </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Admin login</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <form role="form" method="post" action="user_login.php">
-            <fieldset>
-              <div class="form-group">
-                <input class="form-control" placeholder="Username" name="username" type="username" required>
-							</div>
-							
-							<div class="form-group">
-                <input class="form-control" placeholder="Password" name="password" type="password" required>
-							</div>
-					  </fieldset>
-
-            </div>
-              <div class="modal-footer d-flex">
-                <button class="btn btn-md btn-warning btn-block" name="admin_login">Sign In</button>
-				    <button type="button" class="btn btn-md btn-success btn-block" data-dismiss="modal">Cancel</button>
-				  </form>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-
-
-<!-- <script>
-  $('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
-</script> -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 

@@ -43,7 +43,7 @@ if (isset($_SESSION['email'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Admin</title>
+        <title>Staff</title>
            <!-- Custom fonts for this template -->
     <link href="../admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -161,7 +161,7 @@ if (isset($_SESSION['email'])) {
 
                 <!-- Nav Item - Tables -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="tables.php">
+                    <a class="nav-link" href="../website/web_home.php">
                         <i class="fas fa-fw fa-life-ring"></i>
                         <span>Website</span></a>
                 </li>
@@ -250,8 +250,13 @@ if (isset($_SESSION['email'])) {
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Settings</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Log Out</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Time Out</a></li>
+                                        
+                                        <li>
+                                            <li class=" dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                                <i class="fa fa-power-off"></i> Log Out
+                                             </li>
+                                        </li>
+                                    
                                     </ul>
                                 </div>
                             </ul>
@@ -312,6 +317,30 @@ if (isset($_SESSION['email'])) {
         </div>
         
 
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to end your session? Select Logout.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a type="button" href="../website/home.php" class="btn btn-primary">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
         
 
             <!-- Bootstrap core JavaScript-->

@@ -1,0 +1,34 @@
+.swiper-container {
+    width: 94%;
+    height: 600px;
+    margin: 0 auto;
+  }
+  
+
+  .swiper-slide {
+      border-radius:1rem;
+    background-color: #ccc;
+    /* background-color: rgb(201, 221, 19); */
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center center;
+    line-height: 400px;
+  }
+  
+  .swiper-slide-active {
+    z-index: 1;
+    transform: translateZ(0) scale(1.2);
+  }
+  
+  .swiper-slide-next, .swiper-slide-prev {
+    transform: translateZ(-100px);
+  }
+  
+  .swiper-slide-next.swiper-slide-active, .swiper-slide-prev.swiper-slide-active {
+    transform: translateZ(0) scale(0.8);
+  }
+  
+  

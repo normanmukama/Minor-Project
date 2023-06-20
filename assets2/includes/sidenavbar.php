@@ -111,9 +111,9 @@
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-    <a class="nav-link" href="#">
-    <i class="fas fa-bell fa-fw"></i>
-        <span>Notifications</span></a>
+    <a class="nav-link" href="../website/web_home.php">
+    <i class="fas fa-fw fa-life-ring"></i>
+        <span>Website</span></a>
 </li>
 
 <!-- Divider -->
