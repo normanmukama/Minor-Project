@@ -31,7 +31,7 @@ require 'dbcon.php';
         include '../assets2/includes/header.php';
         include '../assets2/includes/sidenavbar.php';
     ?>
-   <div class="">
+   <div class="" style="width: 100%;">
        
        <div class="row">
           <div class="col-md-12">

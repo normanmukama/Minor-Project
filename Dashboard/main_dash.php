@@ -410,36 +410,8 @@ if (isset($_SESSION['username'])) {
                                        
                                     <!-- Time manager -->
                                     <div class="">
-                                        <h2>Time Records</h2>
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>ID</th>
-                                                    <th>Date/Time In</th>
-                                                    <th>Date/Time Out</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $conn = mysqli_connect("localhost","root","adminnorman","minor_project");
-                                                $sql = "SELECT * FROM timerecords";
-                                                $record = mysqli_query($conn, $sql);
-                                                // Assuming you have retrieved the records from the database and stored them in $records variable
-                                                if(mysqli_num_rows($record) > 0)
-                                                {
-                                                    foreach ($record as $record) {
-                                                        echo "<tr>";
-                                                        echo "<td>" . $record['id'] . "</td>";
-                                                        echo "<td>" . $record['datetime_in'] . "</td>";
-                                                        echo "<td>" . $record['datetime_out'] . "</td>";
-                                                        echo "<td>" . $record['status'] . "</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                }
-                                                ?>
-                                            </tbody>
-                                        </table>
+                                        <!-- <h2>Time Records</h2> -->
+                                        <?php include '../charts/index.php'; ?>
                                     </div>
 
                                     </div>
