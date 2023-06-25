@@ -34,14 +34,14 @@
                          <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="sugent.php">BLOG</a>
+                         <a class="nav-link" href="Web_home.php">BLOG</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="#">REGISTRY</a>
+                         <a class="nav-link" href="web_home.php">Contact Us</a>
                      </li>
                      <div class="vertical-line" style=" border-left: 1px solid black;height: 30px;"></div>
                      <li class="nav-item">
-                         <a class="nav-link" href="registry">LOGIN</a>
+                         <a class="nav-link" href="#">LOGIN</a>
                      </li>
                  </ul>
                  <form class="form-inline my-2 my-lg-0">
@@ -55,10 +55,14 @@
             <div class="swiper-container" style="padding-top:2rem; padding-bottom:2rem;">
                 <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <div class="" style="padding-top:6rem;">
+                      <h1 class="text-success">WELCOME TO GOOD HOPE ORPHANAGE SYSTEM</h1>
+                      <h6>We live and serve for the betterment of the future</h6>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top:-15rem;">
                         ADMIN LOGIN
                     </button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop" style="margin-top:-15rem;">
                         STAFF LOGIN
                     </button>
                 </div>

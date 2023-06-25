@@ -31,10 +31,6 @@ if (isset($_SESSION['email'])) {
 }
 ?>
 
-
- 
-                
-
 <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -317,12 +313,6 @@ if (isset($_SESSION['email'])) {
         </div>
         
 
-
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -343,7 +333,7 @@ if (isset($_SESSION['email'])) {
 </div>
         
 
-            <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript-->
     <script src="../admin/vendor/jquery/jquery.min.js"></script>
     <script src="../admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -353,12 +343,6 @@ if (isset($_SESSION['email'])) {
     <!-- Custom scripts for all pages-->
     <script src="../admin/js/sb-admin-2.min.js"></script>
 
-    <!-- Page level plugins -->
-    <!-- <script src="../admin/vendor/datatables/jquery.dataTables.min.js"></script> -->
-    <!-- <script src="../admin/vendor/datatables/dataTables.bootstrap4.min.js"></script> -->
-
-    <!-- Page level custom scripts -->
-    <!-- <script src="../admin/js/demo/datatables-demo.js"></script> -->
 
     </body>
 </html>

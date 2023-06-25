@@ -33,14 +33,14 @@
                          <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="sugent.php">SUGENT AT ARMS LOGIN</a>
+                         <a class="nav-link" href="sugent.php">Contact</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="#">LOGIN</a>
+                         <a class="nav-link" href="#">Our Branches</a>
                      </li>
                      <div class="vertical-line" style=" border-left: 1px solid black;height: 30px;"></div>
                      <li class="nav-item">
-                         <a class="nav-link" href="registry">REGISTERY</a>
+                         <a class="nav-link" href="registry">Current Operations</a>
                      </li>
                  </ul>
                  <form class="form-inline my-2 my-lg-0">
