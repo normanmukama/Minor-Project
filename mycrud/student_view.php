@@ -18,7 +18,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3>Children view details
-                        <a href="code.php" class="btn btn-danger float-right">Back</a>
+                        <a href="../Dashboard/child.php" class="btn btn-danger float-right">Back</a>
                     </h3>
                 </div>
                 <div class="card-body">

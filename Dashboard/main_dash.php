@@ -133,7 +133,7 @@ if (isset($_SESSION['username'])) {
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                                class="fas fa-downld fa-sm text-white-50"></i> We Serve</a>
                     </div>
 
                     <!-- Content Row -->
@@ -221,7 +221,7 @@ if (isset($_SESSION['username'])) {
                    <!-- Content Row -->
                    <div class="row">
                             <!-- Area Chart -->
-                            <div class="col-xl-8 col-lg-7">
+                            <div class="col-xl-12 col-lg-7">
                                 <div class="card shadow mb-4">
                                     <!-- Card Header - Dropdown -->
                                     <div
@@ -258,7 +258,7 @@ if (isset($_SESSION['username'])) {
                             </div>
 
                             <!-- Pie Chart -->
-                            <div class="col-xl-4 col-lg-5">
+                            <!-- <div class="col-xl-4 col-lg-5">
                                 <div class="card shadow mb-4">
                                     <div class="card-body" style="height:51vh;">
                                             <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -293,8 +293,7 @@ if (isset($_SESSION['username'])) {
                                             <div class="mt-4">
                                                 <span class="mr-2">
                                                     <i class="fas fa-circle text-primary"></i>Orphans
-                                                    <!-- N:\php installation\htdocs\minor-project\admin\js\demo\chart-pie-demo.js -->
-                                                </span>
+                                                                                                    </span>
                                                 <span class="mr-2">
                                                     <i class="fas fa-circle text-success"></i>Donors
                                                 </span>
@@ -302,12 +301,10 @@ if (isset($_SESSION['username'])) {
                                                     <i class="fas fa-circle text-info"></i>Guardians
                                                 </span>
                                             </div>
-                                            
-                                            
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                 </div>
                 
