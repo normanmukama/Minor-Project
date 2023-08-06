@@ -5,7 +5,7 @@ session_start();
 
 <?php
 
-$conn = mysqli_connect("127.0.0.1","root","adminnorman","minor_project");
+$conn = mysqli_connect("127.0.0.1","root","","minor_project");
 if(isset($_POST['user_login']))
 {
     $user_email=$_POST['user_email'];
